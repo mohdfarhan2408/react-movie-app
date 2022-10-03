@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #282c34;
+  color: white;
+  font-family: 'Helvetica Neue', sans-serif;
+  padding-top: 70px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* Navigation  */
+nav {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  top: 0;
+  background-color: #222429;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  z-index: 100;
+}
+
+.search-box, .booking-movie button {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Helvetica Neue', sans-serif;
+  padding: 0.5rem 1.5rem;
+  margin: 10px;
+}
+
+.search-box,.booking-movie button:focus {
+  outline: 0;
+}
+
+
+.booking-movie button{
+  position: absolute;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+
+.booking-movie button:hover{
+  background-color: white;
+  color: #222429;
+}
+
+
+
+
+/* Movie Container */
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.no-movie {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+
+.movie-list {
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 3px 3px rgba(54, 49, 49, 0.1);
+  overflow: hidd;
+  margin: 1rem;
+  background-color: #181a1e;
+  cursor: pointer;
+}
+
+.movie-list  img{
+  max-width: 100%;
+}
+
+.movie-list img:hover {
+  opacity: 0.5;
+}
+
+.movie-info {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between; /* to seperate title & rating */
+}
+
+
+.movie-info .tag:hover{
+  opacity: 0.5;
+}
+
+.movie-list-footer button {
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-bottom: 5px;
+  margin-left: 30%;
+  margin-right: 30%;
+  border: 1 px solid white;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.movie-list-footer button:hover {
+  background-color: #181a1e;
+  color: white;
+  border: 1px solid white;
+}
+
+.movie-list-footer button:focus {
+  outline: 0;
+}
+
+
+
+
+/* Movie Details */
+.movie-details {
+  background-color: white;
+  color: #181a1e;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  transform: translateX(100%);
+}
+
+.movie-details p {
+  margin-top: 1rem;
+  font-size: 14px;
+}
+
+.tag {
+  background-color: #282c34;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 0.8px 16px;;
+}
+
+.tag.green {
+  color: green;
+}
+
+.tag.orange {
+  color: orange;
+}
+
+.tag.red {
+  color: red;
+}
+
+
+
+/* Modal Style: */
+.modal-background {
+  position: fixed;
+  z-index: 1; /* sit on top */
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; /* enable scroll */
+  background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-container {
+  width: 70%;
+  max-width: 700px;
+  height: 700px;
+  max-height: 800px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title-close-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.title-close-btn button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modal-container .body {
+  flex: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  text-align: center;
+  color: #181a1e;
+}
+
+.modal-container .footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container .footer button {
+  width: 150px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#cancelBtn {
+  background-color: crimson;
+}
+
+#cancelBtn:hover {
+  background-color: rgb(224, 73, 62);
+}
+
+
+#submitBtn {
+  background-color: rgb(16, 35, 72);
+  width: 150px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#submitBtn:hover {
+  background-color: rgb(48, 78, 136);
+}
+
+label {
+  font-size: 16px;
+}
+
+.submit-booking {
+  border: 1px solid black;
+  border-radius: 10px;
+  font-family: 'Helvetica Neue', sans-serif;
+  padding: 0.5rem 1.5rem;
+  margin: 10px;
+}
+
+.submit-booking:focus {
+  outline: 0;
+}
+
+.details-container {
+  font-size: 16px;
+}
+
+
+
