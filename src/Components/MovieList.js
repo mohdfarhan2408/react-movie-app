@@ -29,6 +29,7 @@ const MovieList =({poster_path, title, popularity, id}) => {
                 ) : (
                     <img alt="movie" src={Image}></img>
                 )}         
+                {/* <img alt="movie" src={API_IMAGE + poster_path}></img> */}
                 <div className="movie-info">
                     <h3>{title}</h3>
                     <span className={`tag ${setPopularityColor(popularity)}`}>                      
